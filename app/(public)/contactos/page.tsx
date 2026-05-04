@@ -114,7 +114,7 @@ export default function ContactosPage() {
                       name="nome"
                       required
                       placeholder="Seu nome"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors outline-none"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors outline-none text-gray-900 placeholder:text-gray-500"
                     />
                   </div>
 
@@ -129,7 +129,7 @@ export default function ContactosPage() {
                       name="email"
                       required
                       placeholder="Seu email"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors outline-none"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors outline-none text-gray-900 placeholder:text-gray-500"
                     />
                   </div>
                 </div>
@@ -145,7 +145,7 @@ export default function ContactosPage() {
                       id="telefone"
                       name="telefone"
                       placeholder="Seu número de telefone"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors outline-none"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors outline-none text-gray-900 placeholder:text-gray-500"
                     />
                   </div>
 
@@ -178,7 +178,7 @@ export default function ContactosPage() {
                     rows={5}
                     required
                     placeholder="Informações..."
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors outline-none resize-none"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors outline-none resize-none text-gray-900 placeholder:text-gray-500"
                   ></textarea>
                 </div>
 

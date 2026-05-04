@@ -30,7 +30,7 @@ export default function LoginPage() {
                 type="email"
                 required
                 disabled={isPending}
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-gray-900 placeholder:text-gray-500"
                 placeholder="admin@combatentesuige.ao"
               />
             </div>
@@ -43,7 +43,7 @@ export default function LoginPage() {
                 type="password"
                 required
                 disabled={isPending}
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-gray-900 placeholder:text-gray-500"
                 placeholder="••••••••"
               />
             </div>

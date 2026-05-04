@@ -64,7 +64,7 @@ export function HeroCarousel({ defaultQuery = '' }: { defaultQuery?: string }) {
                 name="query"
                 defaultValue={defaultQuery}
                 placeholder={t.hero.searchPlaceholder}
-                className="w-full pl-12 pr-32 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 backdrop-blur-sm transition-all text-left"
+                className="w-full pl-12 pr-32 py-4 rounded-full bg-white/15 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/20 backdrop-blur-sm transition-all text-left"
               />
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-6 h-6" />
               <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition-colors">
