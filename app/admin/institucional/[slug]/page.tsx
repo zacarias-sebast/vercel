@@ -53,7 +53,8 @@ export default async function EditarInstitucionalPage({ params }: { params: { sl
               type="text"
               required
               defaultValue={pagina?.titulo || pageInfo.titulo}
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+              placeholder="Ex: Perfil do Titular dos Antigos Combatentes do Uíge"
+              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-gray-900 placeholder:text-gray-400"
             />
           </div>
 
@@ -88,8 +89,8 @@ export default async function EditarInstitucionalPage({ params }: { params: { sl
               rows={15}
               required
               defaultValue={pagina?.conteudo || ''}
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all resize-y"
-              placeholder="Escreva o conteúdo aqui..."
+              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all resize-y text-gray-900 placeholder:text-gray-400"
+              placeholder="Escreva o conteúdo completo da página aqui. Pode usar parágrafos, listas, etc."
             ></textarea>
           </div>
 

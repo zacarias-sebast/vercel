@@ -35,10 +35,18 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
+  // Rotas públicas que não precisam de autenticação
+  const publicAdminRoutes = [
+    '/admin/login',
+    '/admin/cadastro',
+    '/admin/recuperar-senha',
+    '/admin/nova-senha',
+  ]
+
   if (
     !user &&
     request.nextUrl.pathname.startsWith('/admin') &&
-    request.nextUrl.pathname !== '/admin/login'
+    !publicAdminRoutes.includes(request.nextUrl.pathname)
   ) {
     // no user, potentially respond by redirecting the user to the login page
     const url = request.nextUrl.clone()

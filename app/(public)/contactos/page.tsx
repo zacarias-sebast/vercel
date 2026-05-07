@@ -177,7 +177,7 @@ export default function ContactosPage() {
                     name="mensagem"
                     rows={5}
                     required
-                    placeholder="Informações..."
+                    placeholder="Descreva detalhadamente a sua reclamação, sugestão ou esclarecimento..."
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors outline-none resize-none text-gray-900 placeholder:text-gray-500"
                   ></textarea>
                 </div>

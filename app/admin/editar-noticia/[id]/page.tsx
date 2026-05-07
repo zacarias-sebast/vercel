@@ -69,6 +69,7 @@ export default function EditarNoticiaPage() {
               required
               disabled={isPending}
               defaultValue={noticia.titulo}
+              placeholder="Ex: Novos equipamentos entregues ao Exército"
               className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-gray-900 placeholder:text-gray-500"
             />
           </div>
@@ -117,6 +118,7 @@ export default function EditarNoticiaPage() {
               required
               disabled={isPending}
               defaultValue={noticia.conteudo}
+              placeholder="Escreva o conteúdo completo da notícia aqui..."
               className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all resize-y text-gray-900 placeholder:text-gray-400"
             />
           </div>

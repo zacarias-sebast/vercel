@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Shield, LogOut, LayoutDashboard, FileText } from 'lucide-react'
+import { Shield, LogOut, LayoutDashboard, FileText, MessageSquare } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 
@@ -40,6 +40,10 @@ export default async function AdminLayout({
               <Link href="/admin/institucional" className="flex items-center gap-3 px-4 py-3 mt-2 text-gray-300 hover:bg-white/10 hover:text-white rounded-lg transition-colors">
                 <FileText className="w-5 h-5" />
                 Páginas Institucionais
+              </Link>
+              <Link href="/admin/mensagens" className="flex items-center gap-3 px-4 py-3 mt-1 text-gray-300 hover:bg-white/10 hover:text-white rounded-lg transition-colors">
+                <MessageSquare className="w-5 h-5" />
+                Mensagens
               </Link>
             </div>
           </nav>
