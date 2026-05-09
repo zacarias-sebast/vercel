@@ -61,9 +61,9 @@ export function Navbar() {
         <div className="flex justify-between h-20 items-center">
           <div className="flex items-center gap-3">
             <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
-              <Shield className="w-8 h-8 text-blue-400" />
+              <img src="/logo.jpg" alt="logo" className='w-10 h-10 border border-gray-600 rounded-full' />
               <div className="flex flex-col">
-                <span className="font-bold text-xl leading-none tracking-tight">Antigos Combatentes</span>
+                <span className="font-bold text-xl leading-none tracking-tight">Portal ACVP</span>
                 <span className="text-sm text-blue-400 font-medium tracking-widest uppercase">do Uíge</span>
               </div>
             </Link>

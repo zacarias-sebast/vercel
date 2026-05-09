@@ -13,10 +13,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
 
           <div className="col-span-1 md:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-6">
-
+             <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
+              <img src="/logo.jpg" alt="logo" className='w-10 h-10 border border-gray-600 rounded-full shrink-0' />
               <div className="flex flex-col">
-                <span className="font-bold text-xl leading-none tracking-tight text-white">Antigos Combatentes</span>
+                <span className="font-bold text-xl leading-none tracking-tight text-white">Portal ACVP</span>
                 <span className="text-sm text-blue-400 font-medium tracking-widest uppercase">do Uíge</span>
               </div>
             </Link>
@@ -24,7 +24,7 @@ export function Footer() {
               {t.footer.description}
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm font-medium">Facebook</a>
+              <a href="https://web.facebook.com/profile.php?id=61586819396001" className="text-gray-400 hover:text-white transition-colors text-sm font-medium">Facebook</a>
             </div>
           </div>
 
