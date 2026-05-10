@@ -5,6 +5,7 @@ import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import { z } from 'zod'
 import { Resend } from 'resend'
+import type { ActionState } from '@/app/types/actions'
 
 const noticiaSchema = z.object({
   titulo: z.string().min(5, 'Título deve ter pelo menos 5 caracteres'),
@@ -198,13 +199,13 @@ async function enviarNotificacaoTelegram(
   }
 }
 
-export async function criarNoticia(prevState: any, formData: FormData) {
+export async function criarNoticia(prevState: ActionState, formData: FormData): Promise<ActionState> {
   const supabase = await createClient()
   
   // Verify auth
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) {
-    return { error: 'Não autorizado. Faça login.' }
+    return { error: 'Não autorizado. Faça login.', success: '' }
   }
 
   const titulo = formData.get('titulo') as string
@@ -214,7 +215,7 @@ export async function criarNoticia(prevState: any, formData: FormData) {
 
   const validated = noticiaSchema.safeParse({ titulo, conteudo, categoria })
   if (!validated.success) {
-    return { error: validated.error.issues[0].message }
+    return { error: validated.error.issues[0].message, success: '' }
   }
 
   let imagem_url = null
@@ -228,7 +229,7 @@ export async function criarNoticia(prevState: any, formData: FormData) {
       .upload(fileName, imagem)
 
     if (uploadError) {
-      return { error: `Erro ao fazer upload da imagem no Supabase: ${uploadError.message} (Verifique se o bucket 'imagens_noticias' existe e é público)` }
+      return { error: `Erro ao fazer upload da imagem no Supabase: ${uploadError.message} (Verifique se o bucket 'imagens_noticias' existe e é público)`, success: '' }
     }
 
     const { data: publicUrlData } = supabase.storage
@@ -249,7 +250,7 @@ export async function criarNoticia(prevState: any, formData: FormData) {
   ])
 
   if (insertError) {
-    return { error: 'Erro ao criar a notícia no banco de dados.' }
+    return { error: 'Erro ao criar a notícia no banco de dados.', success: '' }
   }
 
   // Enviar notificações em segundo plano (não bloqueia o redirect)
@@ -260,10 +261,10 @@ export async function criarNoticia(prevState: any, formData: FormData) {
   redirect('/admin')
 }
 
-export async function editarNoticia(prevState: any, formData: FormData) {
+export async function editarNoticia(prevState: ActionState, formData: FormData): Promise<ActionState> {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return { error: 'Não autorizado.' }
+  if (!user) return { error: 'Não autorizado.', success: '' }
 
   const id = formData.get('id') as string
   const titulo = formData.get('titulo') as string
@@ -272,7 +273,7 @@ export async function editarNoticia(prevState: any, formData: FormData) {
   const imagem = formData.get('imagem') as File
 
   const validated = noticiaSchema.safeParse({ titulo, conteudo, categoria })
-  if (!validated.success) return { error: validated.error.issues[0].message }
+  if (!validated.success) return { error: validated.error.issues[0].message, success: '' }
 
   let imagem_url: string | undefined = undefined
 
@@ -284,7 +285,7 @@ export async function editarNoticia(prevState: any, formData: FormData) {
       .upload(fileName, imagem)
 
     if (uploadError) {
-      return { error: `Erro ao fazer upload da imagem: ${uploadError.message}` }
+      return { error: `Erro ao fazer upload da imagem: ${uploadError.message}`, success: '' }
     }
 
     const { data: publicUrlData } = supabase.storage
@@ -306,7 +307,7 @@ export async function editarNoticia(prevState: any, formData: FormData) {
     .eq('id', id)
 
   if (updateError) {
-    return { error: `Erro ao atualizar a notícia: ${updateError.message}` }
+    return { error: `Erro ao atualizar a notícia: ${updateError.message}`, success: '' }
   }
 
   revalidatePath('/admin')

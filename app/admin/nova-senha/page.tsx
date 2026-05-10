@@ -5,8 +5,9 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Lock, Eye, EyeOff, Shield, CheckCircle2, AlertCircle } from 'lucide-react'
 import { updatePassword } from '@/app/actions/auth'
+import type { ActionState } from '@/app/types/actions'
 
-const initialState: { error?: string; success?: string } = {}
+const initialState: ActionState = { error: '', success: '' }
 
 export default function NovaSenhaPage() {
   const [state, formAction, isPending] = useActionState(updatePassword, initialState)

@@ -2,13 +2,13 @@
 
 import { useActionState, useEffect, useRef } from 'react'
 import { subscribeToNewsletter } from '@/app/actions/subscribe'
+import type { ActionState } from '@/app/types/actions'
 import { Send, CheckCircle, AlertCircle } from 'lucide-react'
 import { useLanguage } from '@/lib/i18n'
 
-const initialState = {
+const initialState: ActionState = {
   error: '',
-  success: false,
-  message: '',
+  success: '',
 }
 
 export function SubscribeForm() {
@@ -66,7 +66,7 @@ export function SubscribeForm() {
         {state.success && (
           <div className="flex items-center gap-2 text-green-700 text-sm bg-green-50 p-3 rounded-lg">
             <CheckCircle className="w-4 h-4 shrink-0" />
-            <p>{state.message}</p>
+            <p>{state.success}</p>
           </div>
         )}
 

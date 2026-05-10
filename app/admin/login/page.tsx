@@ -3,9 +3,10 @@
 import { useActionState, useState } from 'react'
 import Link from 'next/link'
 import { login } from '@/app/actions/auth'
+import type { ActionState } from '@/app/types/actions'
 import { Shield, AlertCircle, LogIn, Eye, EyeOff, Mail, Lock } from 'lucide-react'
 
-const initialState = { error: '' }
+const initialState: ActionState = { error: '', success: '' }
 
 export default function LoginPage() {
   const [state, formAction, isPending] = useActionState(login, initialState)
@@ -218,11 +219,11 @@ export default function LoginPage() {
             </form>
 
             <div className="divider" style={{ marginTop: '24px' }}>
-              <span>Acesso restrito</span>
+              <span>Recuperar acesso</span>
             </div>
 
-            <Link href="/admin/cadastro" className="aux-link" style={{ marginTop: '12px' }}>
-              Criar nova conta de administrador
+            <Link href="/admin/recuperar-senha" className="aux-link" style={{ marginTop: '12px' }}>
+              Recuperar senha
             </Link>
           </div>
         </div>

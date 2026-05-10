@@ -2,11 +2,12 @@
 
 import { useActionState, useEffect, useState } from 'react'
 import { editarNoticia } from '@/app/actions/noticia'
+import type { ActionState } from '@/app/types/actions'
 import { AlertCircle, Save, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 
-const initialState = { error: '' }
+const initialState: ActionState = { error: '', success: '' }
 
 const CATEGORIAS = ['Apoio Social', 'Eventos', 'Programas', 'Comunicados']
 

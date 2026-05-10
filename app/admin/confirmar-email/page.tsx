@@ -166,8 +166,8 @@ export default function ConfirmarEmailPage() {
           </div>
         </div>
 
-        <Link href="/admin/cadastro" className="back-link">
-          <ArrowLeft style={{ width: 14, height: 14 }} /> Voltar ao cadastro
+        <Link href="/admin/login" className="back-link">
+          <ArrowLeft style={{ width: 14, height: 14 }} /> Voltar ao login
         </Link>
       </div>
     </div>

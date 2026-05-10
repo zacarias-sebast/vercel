@@ -2,11 +2,13 @@
 
 import { useActionState } from 'react'
 import { criarNoticia } from '@/app/actions/noticia'
+import type { ActionState } from '@/app/types/actions'
 import { AlertCircle, Save, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 
-const initialState = {
+const initialState: ActionState = {
   error: '',
+  success: '',
 }
 
 export default function NovaNoticiaPage() {

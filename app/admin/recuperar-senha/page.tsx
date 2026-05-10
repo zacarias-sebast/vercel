@@ -3,9 +3,10 @@
 import { useActionState } from 'react'
 import Link from 'next/link'
 import { resetPassword } from '@/app/actions/auth'
+import type { ActionState } from '@/app/types/actions'
 import { Shield, AlertCircle, Mail, SendHorizonal, CheckCircle2 } from 'lucide-react'
 
-const initialState: { error?: string; success?: string } = {}
+const initialState: ActionState = { error: '', success: '' }
 
 export default function RecuperarSenhaPage() {
   const [state, formAction, isPending] = useActionState(resetPassword, initialState)

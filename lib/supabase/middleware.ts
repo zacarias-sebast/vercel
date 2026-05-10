@@ -38,7 +38,6 @@ export async function updateSession(request: NextRequest) {
   // Rotas públicas que não precisam de autenticação
   const publicAdminRoutes = [
     '/admin/login',
-    '/admin/cadastro',
     '/admin/recuperar-senha',
     '/admin/nova-senha',
   ]
