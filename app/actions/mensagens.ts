@@ -5,16 +5,22 @@ import { createClient } from '@/lib/supabase/server'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
-export async function eliminarMensagem(formData: FormData) {
-  // Verificar autenticação com o cliente normal
+export async function eliminarMensagem(formData: FormData): Promise<void> {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return { success: false, error: 'Não autorizado.' }
+
+  if (!user) {
+    console.error('Não autorizado para eliminar mensagem')
+    return
+  }
 
   const id = formData.get('id') as string
-  if (!id) return { success: false, error: 'ID inválido.' }
 
-  // Usar cliente admin (SERVICE ROLE) para bypasaar o RLS
+  if (!id) {
+    console.error('ID de mensagem inválido')
+    return
+  }
+
   const adminClient = createAdminClient()
 
   // Obter o path do ficheiro antes de eliminar o registo
@@ -39,7 +45,7 @@ export async function eliminarMensagem(formData: FormData) {
 
   if (error) {
     console.error('Erro ao eliminar mensagem:', error)
-    return { success: false, error: error.message }
+    return
   }
 
   revalidatePath('/admin/mensagens')

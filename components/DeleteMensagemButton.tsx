@@ -7,7 +7,7 @@ import { Trash2 } from 'lucide-react'
 export function DeleteMensagemButton({ id, nome }: { id: string; nome: string }) {
   const [isPending, startTransition] = useTransition()
 
-  function handleDelete() {
+  const handleDelete = (): void => {
     const confirmed = window.confirm(
       `Tem a certeza que deseja eliminar a mensagem de:\n\n"${nome}"\n\nEsta acção não pode ser desfeita.`
     )
@@ -15,7 +15,10 @@ export function DeleteMensagemButton({ id, nome }: { id: string; nome: string })
 
     const formData = new FormData()
     formData.append('id', id)
-    startTransition(() => eliminarMensagem(formData))
+    
+    startTransition(() => {
+      void eliminarMensagem(formData)
+    })
   }
 
   return (

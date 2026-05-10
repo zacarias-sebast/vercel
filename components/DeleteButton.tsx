@@ -15,7 +15,9 @@ export function DeleteButton({ id, titulo }: { id: string; titulo: string }) {
 
     const formData = new FormData()
     formData.append('id', id)
-    startTransition(() => deletarNoticia(formData))
+    startTransition(() => {
+      void deletarNoticia(formData)
+    })
   }
 
   return (
