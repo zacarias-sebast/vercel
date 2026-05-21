@@ -203,11 +203,13 @@ export async function criarNoticia(prevState: ActionState, formData: FormData): 
   const supabase = await createClient()
   
   // Verify auth
+  let user: any
   try {
-    const { data: { user }, error } = await supabase.auth.getUser()
-    if (!user || error) {
+    const { data: { user: authUser }, error } = await supabase.auth.getUser()
+    if (!authUser || error) {
       return { error: 'Não autorizado. Faça login.', success: '' }
     }
+    user = authUser
   } catch (err) {
     return { error: 'Erro de autenticação. Faça login novamente.', success: '' }
   }
