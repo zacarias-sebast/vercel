@@ -29,15 +29,12 @@ export function Navbar() {
         { name: t.nav.ministryMenu.titulars, href: '/ministerio/titulares-entidade' },
         { name: t.nav.ministryMenu.about, href: '/sobre' },
         { name: t.nav.ministryMenu.attributes, href: '/ministerio/atribuicoes' },
-        { name: t.nav.ministryMenu.organic, href: '/ministerio/estrutura-organica' },
         { name: t.nav.ministryMenu.chart, href: '/ministerio/organograma' },
       ]
     },
     {
       name: t.nav.uige,
       dropdown: [
-        { name: t.nav.uigeMenu.president, href: '/uige/presidente' },
-        { name: t.nav.uigeMenu.vp, href: '/uige/vice-presidente' },
         { name: t.nav.uigeMenu.governor, href: '/uige/governadores' },
         { name: t.nav.uigeMenu.stateMinistry, href: '/uige/municipios' },
         { name: t.nav.uigeMenu.symbols, href: '/uige/simbolos-nacionais' },

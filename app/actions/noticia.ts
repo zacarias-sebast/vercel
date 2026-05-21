@@ -203,9 +203,13 @@ export async function criarNoticia(prevState: ActionState, formData: FormData): 
   const supabase = await createClient()
   
   // Verify auth
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) {
-    return { error: 'Não autorizado. Faça login.', success: '' }
+  try {
+    const { data: { user }, error } = await supabase.auth.getUser()
+    if (!user || error) {
+      return { error: 'Não autorizado. Faça login.', success: '' }
+    }
+  } catch (err) {
+    return { error: 'Erro de autenticação. Faça login novamente.', success: '' }
   }
 
   const titulo = formData.get('titulo') as string
@@ -263,8 +267,13 @@ export async function criarNoticia(prevState: ActionState, formData: FormData): 
 
 export async function editarNoticia(prevState: ActionState, formData: FormData): Promise<ActionState> {
   const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return { error: 'Não autorizado.', success: '' }
+  
+  try {
+    const { data: { user }, error } = await supabase.auth.getUser()
+    if (!user || error) return { error: 'Não autorizado.', success: '' }
+  } catch (err) {
+    return { error: 'Erro de autenticação. Faça login novamente.', success: '' }
+  }
 
   const id = formData.get('id') as string
   const titulo = formData.get('titulo') as string
@@ -316,8 +325,13 @@ export async function editarNoticia(prevState: ActionState, formData: FormData):
 
 export async function deletarNoticia(formData: FormData) {
   const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return
+  
+  try {
+    const { data: { user }, error } = await supabase.auth.getUser()
+    if (!user || error) return
+  } catch (err) {
+    return
+  }
 
   const id = formData.get('id') as string
 

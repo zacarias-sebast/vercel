@@ -9,22 +9,19 @@ export const dictionaries = {
     nav: {
       home: 'Início',
       about: 'Sobre Nós',
-      ministry: 'O Ministério',
-      uige: 'Angola Uíge',
+      ministry: 'Delegação do Uíge',
+      uige: 'Uíge',
       info: 'Informações',
       contacts: 'Contatos',
       ministryMenu: {
         profile: 'Perfil do titular dos AC/Uige',
         message: 'Mensagem do Titular',
         titulars: 'Titulares da Entidade',
-        about: 'Sobre o Ministério',
+        about: 'Sobre a Delegação',
         attributes: 'Atribuições',
-        organic: 'Estrutura Orgânica',
         chart: 'Organograma'
       },
       uigeMenu: {
-        president: 'Presidente da República',
-        vp: 'Vice-Presidente',
         governor: 'Governadores',
         stateMinistry: 'Municípios',
         symbols: 'Símbolos Nacionais',
@@ -93,22 +90,19 @@ export const dictionaries = {
     nav: {
       home: 'Home',
       about: 'About Us',
-      ministry: 'The Ministry',
-      uige: 'Angola Uíge',
+      ministry: 'Delegation of Uíge',
+      uige: 'Uíge',
       info: 'Information',
       contacts: 'Contacts',
       ministryMenu: {
         profile: 'Perfil do titular dos AC/Uige',
         message: 'Titular Message',
         titulars: 'Entity Titulars',
-        about: 'About the Ministry',
+        about: 'About the Delegation',
         attributes: 'Attributes',
-        organic: 'Organic Structure',
         chart: 'Organization Chart'
       },
       uigeMenu: {
-        president: 'President of the Republic',
-        vp: 'Vice-President',
         governor: 'Governors',
         stateMinistry: 'Municipalities',
         symbols: 'National Symbols',

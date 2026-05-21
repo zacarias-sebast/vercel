@@ -7,10 +7,16 @@ import { redirect } from 'next/navigation'
 
 export async function eliminarMensagem(formData: FormData): Promise<void> {
   const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
+  
+  try {
+    const { data: { user }, error } = await supabase.auth.getUser()
 
-  if (!user) {
-    console.error('Não autorizado para eliminar mensagem')
+    if (!user || error) {
+      console.error('Não autorizado para eliminar mensagem')
+      return
+    }
+  } catch (err) {
+    console.error('Erro de autenticação ao eliminar mensagem')
     return
   }
 

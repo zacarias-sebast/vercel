@@ -8,9 +8,13 @@ export async function atualizarInstitucional(formData: FormData) {
   const supabase = await createClient()
   
   // Verifica autenticação
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) {
-    throw new Error('Não autorizado')
+  try {
+    const { data: { user }, error } = await supabase.auth.getUser()
+    if (!user || error) {
+      throw new Error('Não autorizado')
+    }
+  } catch (err) {
+    throw new Error('Erro de autenticação. Faça login novamente.')
   }
 
   const slug = formData.get('slug') as string

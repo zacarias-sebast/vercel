@@ -1,5 +1,4 @@
 import { Navbar } from '@/components/Navbar'
-import { Footer } from '@/components/Footer'
 
 export default function PublicLayout({
   children,
@@ -10,7 +9,6 @@ export default function PublicLayout({
     <>
       <Navbar />
       <main className="flex-grow bg-gray-50">{children}</main>
-      <Footer />
     </>
   )
 }

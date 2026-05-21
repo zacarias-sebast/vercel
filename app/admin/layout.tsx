@@ -9,13 +9,19 @@ export default async function AdminLayout({
   children: React.ReactNode
 }) {
   const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
+  
+  try {
+    const { data: { user }, error } = await supabase.auth.getUser()
+    
+    if (error || !user) {
+      redirect('/admin/login')
+    }
 
-  return (
-    <div className="min-h-screen bg-gray-50 flex flex-col md:flex-row">
-      {/* Sidebar */}
-      {user && (
-        <aside className="w-full md:w-64 bg-[#0b1120] text-white flex-shrink-0 flex flex-col">
+    return (
+      <div className="min-h-screen bg-gray-50 flex flex-col md:flex-row">
+        {/* Sidebar */}
+        {user && (
+          <aside className="w-full md:w-64 bg-[#0b1120] text-white flex-shrink-0 flex flex-col">
           <div className="p-6 border-b border-gray-800">
             <Link href="/" className="flex items-center gap-3">
               <Shield className="w-8 h-8 text-blue-400" />
@@ -45,6 +51,17 @@ export default async function AdminLayout({
                 <MessageSquare className="w-5 h-5" />
                 Mensagens
               </Link>
+              <div className="pt-4 mt-2 border-t border-gray-800">
+                <span className="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Autoridades Locais</span>
+                <Link href="/admin/institucional" className="flex items-center gap-3 px-4 py-3 mt-2 text-gray-300 hover:bg-white/10 hover:text-white rounded-lg transition-colors">
+                  <FileText className="w-5 h-5" />
+                  Governador do Uíge
+                </Link>
+                <Link href="/admin/institucional" className="flex items-center gap-3 px-4 py-3 mt-1 text-gray-300 hover:bg-white/10 hover:text-white rounded-lg transition-colors">
+                  <FileText className="w-5 h-5" />
+                  Vice-Governador
+                </Link>
+              </div>
             </div>
           </nav>
           <div className="p-4 border-t border-gray-800">
@@ -63,5 +80,9 @@ export default async function AdminLayout({
         {children}
       </main>
     </div>
-  )
+    )
+  } catch (error: any) {
+    // Redirect to login if there's any auth error
+    redirect('/admin/login')
+  }
 }

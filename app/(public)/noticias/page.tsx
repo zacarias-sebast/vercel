@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Calendar, Tag, ArrowRight, Newspaper } from 'lucide-react'
 import { format } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
+import { Footer } from '@/components/Footer'
 
 export const dynamic = 'force-dynamic'
 
@@ -174,6 +175,7 @@ export default async function NoticiasPage({
           </div>
         )}
       </div>
+      <Footer />
     </div>
   )
 }
