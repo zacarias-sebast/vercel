@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { HeroCarousel } from '@/components/HeroCarousel'
 import { MainSectionClient } from '@/components/MainSectionClient'
+import { Footer } from '@/components/Footer'
 
 // Mock data in case DB is not set up
 const MOCK_NEWS = [
@@ -115,6 +116,7 @@ export default async function Home({
         currentPage={page}
         totalPages={totalPages}
       />
+      <Footer />
     </div>
   )
 }

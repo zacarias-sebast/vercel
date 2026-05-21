@@ -29,7 +29,7 @@ export default function InformacoesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Info className="w-16 h-16 text-blue-400 mx-auto mb-6" />
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Informações</h1>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto text-justify">
             Aceda aos documentos legais e publicações da Delegação Provincial dos Antigos Combatentes do Uíge.
           </p>
         </div>
@@ -52,7 +52,7 @@ export default function InformacoesPage() {
                   <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                     {section.title}
                   </h2>
-                  <p className="text-gray-500 leading-relaxed">{section.description}</p>
+                  <p className="text-gray-500 leading-relaxed text-justify">{section.description}</p>
                 </div>
                 <div className="flex items-center gap-1 text-sm font-medium text-blue-600 group-hover:gap-2 transition-all">
                   Aceder <ArrowRight className="w-4 h-4" />

@@ -68,7 +68,7 @@ export default function TermosPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Intro */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 mb-8">
-          <p className="text-gray-700 leading-relaxed text-lg">
+          <p className="text-gray-700 leading-relaxed text-lg text-justify">
             O sítio do Portal do Governo de Angola adopta práticas que visam proporcionar ao utilizador 
             um acesso às informações institucionais com privacidade e credibilidade. O presente documento 
             tem como objectivo apresentar as directrizes dessa política.
@@ -85,11 +85,11 @@ export default function TermosPage() {
                 </span>
                 <div className="flex-1">
                   <h2 className="text-xl font-bold text-gray-900 mb-3">{section.title}</h2>
-                  <p className="text-gray-600 leading-relaxed">{section.content}</p>
+                  <p className="text-gray-600 leading-relaxed text-justify">{section.content}</p>
                   {section.subsections && (
                     <ul className="mt-4 space-y-3">
                       {section.subsections.map((sub, subIdx) => (
-                        <li key={subIdx} className="flex items-start gap-3 text-gray-600 text-sm leading-relaxed bg-gray-50 rounded-lg p-4">
+                        <li key={subIdx} className="flex items-start gap-3 text-gray-600 text-sm leading-relaxed bg-gray-50 rounded-lg p-4 text-justify">
                           <ChevronRight className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
                           {sub}
                         </li>
@@ -107,7 +107,7 @@ export default function TermosPage() {
           <Shield className="w-6 h-6 text-blue-600 shrink-0 mt-0.5" />
           <div>
             <p className="font-semibold text-blue-900 mb-1">Delegação Provincial dos Antigos Combatentes do Uíge</p>
-            <p className="text-blue-700 text-sm leading-relaxed">
+            <p className="text-blue-700 text-sm leading-relaxed text-justify">
               Para mais informações ou esclarecimentos sobre esta política, entre em contacto com 
               a nossa equipa através da página de{' '}
               <Link href="/contactos" className="underline font-medium hover:text-blue-900 transition-colors">

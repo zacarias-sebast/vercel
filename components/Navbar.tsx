@@ -36,6 +36,7 @@ export function Navbar() {
       name: t.nav.uige,
       dropdown: [
         { name: t.nav.uigeMenu.governor, href: '/uige/governadores' },
+        { name: t.nav.uigeMenu.viceGovernor, href: '/uige/vice-governador' },
         { name: t.nav.uigeMenu.stateMinistry, href: '/uige/municipios' },
         { name: t.nav.uigeMenu.symbols, href: '/uige/simbolos-nacionais' },
         { name: t.nav.uigeMenu.climate, href: '/uige/clima' },

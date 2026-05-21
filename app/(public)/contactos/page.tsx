@@ -49,7 +49,7 @@ export default function ContactosPage() {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Entre em Contacto Connosco</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto text-justify">
             Para formalizar o envio da sua solicitação, esclarecimento ou sugestão, solicitamos o preenchimento dos campos indicados abaixo.
           </p>
         </div>

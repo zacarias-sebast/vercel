@@ -59,7 +59,7 @@ export default async function InstitucionalPublicPage({ params }: { params: { sl
           <div className="p-8 md:p-12">
             {pagina?.conteudo ? (
               <div 
-                className="prose prose-lg max-w-none text-gray-700 leading-relaxed whitespace-pre-wrap"
+                className="prose prose-lg max-w-none text-gray-700 leading-relaxed whitespace-pre-wrap text-justify"
                 dangerouslySetInnerHTML={{ __html: pagina.conteudo.replace(/\n/g, '<br />') }}
               />
             ) : (

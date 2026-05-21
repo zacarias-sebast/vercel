@@ -8,7 +8,7 @@ export default function SobrePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Shield className="w-16 h-16 text-blue-400 mx-auto mb-6" />
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Sobre Nós</h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto text-justify">
             A Delegação Provincial dos Antigos Combatentes do Uíge é um órgão público que assegura a implementação de políticas sociais, assistência e integração dos antigos combatentes na sociedade.
           </p>
         </div>
@@ -18,7 +18,7 @@ export default function SobrePage() {
         {/* Bem-vindo */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-10 md:p-12 mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-4 border-blue-600 pl-4">Bem-vindo</h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
+          <p className="text-lg text-gray-700 leading-relaxed text-justify">
             A Delegação Provincial dos Antigos Combatentes do Uíge tem como missão honrar, valorizar e apoiar todos os cidadãos que contribuíram para a luta de libertação nacional e defesa da pátria. Trabalhamos diariamente para garantir dignidade, reconhecimento e melhores condições de vida aos antigos combatentes e veteranos da pátria.
           </p>
         </div>
@@ -31,7 +31,7 @@ export default function SobrePage() {
                 <Target className="w-8 h-8 text-blue-600" />
                 <h2 className="text-2xl font-bold text-gray-900">Missão</h2>
               </div>
-              <p className="text-gray-700 text-lg">
+              <p className="text-gray-700 text-lg text-justify">
                 Promover o bem-estar social, económico e moral dos antigos combatentes.
               </p>
             </div>
@@ -41,7 +41,7 @@ export default function SobrePage() {
                 <Info className="w-8 h-8 text-blue-600" />
                 <h2 className="text-2xl font-bold text-gray-900">Visão</h2>
               </div>
-              <p className="text-gray-700 text-lg">
+              <p className="text-gray-700 text-lg text-justify">
                 Ser uma instituição de referência na valorização e apoio aos veteranos da pátria.
               </p>
             </div>
@@ -75,7 +75,7 @@ export default function SobrePage() {
           {/* Services */}
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 border-l-4 border-blue-600 pl-4">Serviços</h2>
-            <p className="text-gray-700 mb-6">Oferecemos diversos serviços para apoiar os antigos combatentes e seus familiares:</p>
+            <p className="text-gray-700 mb-6 text-justify">Oferecemos diversos serviços para apoiar os antigos combatentes e seus familiares:</p>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <FileText className="w-6 h-6 text-blue-500 shrink-0 mt-1" />

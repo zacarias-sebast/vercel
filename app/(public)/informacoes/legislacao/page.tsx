@@ -34,7 +34,7 @@ export default async function LegislacaoPage() {
             </div>
             <div>
               <h1 className="text-3xl font-bold text-gray-900">Legislação</h1>
-              <p className="text-gray-500 mt-1">Consulte os diplomas legais, decretos e regulamentos disponíveis.</p>
+              <p className="text-gray-500 mt-1 text-justify">Consulte os diplomas legais, decretos e regulamentos disponíveis.</p>
             </div>
           </div>
 
@@ -63,7 +63,7 @@ export default async function LegislacaoPage() {
                             {doc.title}
                           </h3>
                           {doc.description && (
-                            <p className="text-sm text-gray-600 line-clamp-3 mb-4">
+                            <p className="text-sm text-gray-600 line-clamp-3 mb-4 text-justify">
                               {doc.description}
                             </p>
                           )}

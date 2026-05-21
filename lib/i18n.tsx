@@ -23,6 +23,7 @@ export const dictionaries = {
       },
       uigeMenu: {
         governor: 'Governadores',
+        viceGovernor: 'Vice-Governador',
         stateMinistry: 'Municípios',
         symbols: 'Símbolos Nacionais',
         map: 'Mapa',
@@ -104,6 +105,7 @@ export const dictionaries = {
       },
       uigeMenu: {
         governor: 'Governors',
+        viceGovernor: 'Vice-Governor',
         stateMinistry: 'Municipalities',
         symbols: 'National Symbols',
         map: 'Map',

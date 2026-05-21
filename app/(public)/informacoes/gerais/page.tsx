@@ -33,7 +33,7 @@ export default async function InformacaoGeralPage() {
             </div>
             <div>
               <h1 className="text-3xl font-bold text-gray-900">Informação Geral e Livros</h1>
-              <p className="text-gray-500 mt-1">Consulte as publicações, livros, manuais e outras informações relevantes.</p>
+              <p className="text-gray-500 mt-1 text-justify">Consulte as publicações, livros, manuais e outras informações relevantes.</p>
             </div>
           </div>
 
@@ -62,7 +62,7 @@ export default async function InformacaoGeralPage() {
                             {doc.title}
                           </h3>
                           {doc.description && (
-                            <p className="text-sm text-gray-600 line-clamp-3 mb-4">
+                            <p className="text-sm text-gray-600 line-clamp-3 mb-4 text-justify">
                               {doc.description}
                             </p>
                           )}

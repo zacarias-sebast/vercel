@@ -67,7 +67,7 @@ export default async function NoticiaPage({ params }: { params: Promise<{ id: st
             {noticia.titulo}
           </h1>
 
-          <div className="prose prose-blue prose-lg max-w-none text-gray-700 whitespace-pre-line">
+          <div className="prose prose-blue prose-lg max-w-none text-gray-700 whitespace-pre-line text-justify">
             {noticia.conteudo}
           </div>
         </div>
