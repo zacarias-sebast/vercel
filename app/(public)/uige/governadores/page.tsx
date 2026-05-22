@@ -1,5 +1,5 @@
 import { History, User, Calendar, MapPin, BookOpen, Briefcase } from "lucide-react";
-import { createClient } from "@/lib/supabase/server"
+import { createAdminClient } from "@/lib/supabase/admin"
 import Image from "next/image"
 
 export const metadata = {
@@ -9,7 +9,7 @@ export const metadata = {
 export const dynamic = 'force-dynamic'
 
 export default async function GovernadorPage() {
-  const supabase = await createClient()
+  const supabase = createAdminClient()
   
   // Buscar dados do governador
   const { data: governador } = await supabase

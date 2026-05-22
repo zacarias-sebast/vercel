@@ -1,7 +1,7 @@
 'use server'
 
 import { revalidatePath } from 'next/cache'
-import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/admin'
 import { z } from 'zod'
 import type { ActionState } from '@/app/types/actions'
 
@@ -20,7 +20,7 @@ const governadorSchema = z.object({
 
 export async function saveGovernador(prevState: ActionState, formData: FormData): Promise<ActionState> {
   try {
-    const supabase = await createClient()
+    const supabase = createAdminClient()
     
     // Processar upload de imagem se existir
     let fotoUrl: string | undefined
@@ -97,7 +97,7 @@ export async function saveGovernador(prevState: ActionState, formData: FormData)
 
 export async function saveViceGovernador(prevState: ActionState, formData: FormData): Promise<ActionState> {
   try {
-    const supabase = await createClient()
+    const supabase = createAdminClient()
     
     // Processar upload de imagem se existir
     let fotoUrl: string | undefined
